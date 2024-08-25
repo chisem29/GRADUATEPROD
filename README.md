@@ -2,7 +2,7 @@
 
 **This is my first ML pet-project**
 
-I`ll create model using Python ML lybraries (Numpy, Pandas, SKLearn, Matplotlib(Seaborn))
+I`ll create model using Python ML lybraries (Numpy, Pandas, SKLearn)
 
 ## MODEL 
 
