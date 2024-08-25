@@ -9,7 +9,7 @@ class ModelGRE :
     def __init__(self, url : str, **kwargs : Any) -> None:
 
         self.__data__ = getDataFromCSV(url, **kwargs)
-        self.X_train, self.X_test, self.Y_train, self.Y_test = self.__trainTestSplitData__(0.3)
+        self.__X_train__, self.__X_test__, self.__Y_train__, self.__Y_test__ = self.__trainTestSplitData__(0.3)
 
         self.__model__ = LinearRegression()
 
@@ -36,11 +36,11 @@ class ModelGRE :
 
     def __fit__(self) :
 
-        self.__model__.fit(self.X_train, self.Y_train)
+        self.__model__.fit(self.__X_train__, self.__Y_train__)
 
     def __predict__(self) :
 
-        return self.__model__.predict(self.X_test)
+        return self.__model__.predict(self.__X_test__)
 
     @property
     def Y_pred(self) :
@@ -51,7 +51,7 @@ class ModelGRE :
 
     def MSE(self) :
 
-        return mean_squared_error(self.Y_test, self.Y_pred)
+        return mean_squared_error(self.__Y_test__, self.Y_pred)
 
 
 if __name__ == '__main__' :
