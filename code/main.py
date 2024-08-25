@@ -1,7 +1,7 @@
 from datapr import getDataFromCSV
 from sklearn.linear_model import LinearRegression, _base
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import roc_curve, mean_squared_error
+from sklearn.metrics import mean_squared_error
 from sklearn.ensemble import IsolationForest
 from typing import Any
 import numpy as np
