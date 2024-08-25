@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_curve, mean_squared_error
 from sklearn.ensemble import IsolationForest
 from typing import Any
+import numpy as np
 
 class ModelGRE :
     def __init__(self, url : str, **kwargs : Any) -> None:
@@ -13,11 +14,11 @@ class ModelGRE :
 
         self.__model__ = LinearRegression()
 
-    def __XLabelsWithoutEmissions__(self, X, Y) :
+    def __XLabelsWithoutEmissions__(self, X : np.ndarray, Y : np.ndarray) :
 
         return IsolationForest().fit_predict(X, Y)
 
-    def __XYWithoutEmissions__(self, X, Y) :
+    def __XYWithoutEmissions__(self, X : np.ndarray, Y : np.ndarray) :
 
         XX = self.__XLabelsWithoutEmissions__(X, Y)
 
